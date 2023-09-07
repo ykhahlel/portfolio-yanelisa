@@ -22,8 +22,37 @@
   <!-- ==== Main CSS File ====== -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your user ID
+    emailjs.init("tF4KbQbKCTLZpg-Ei");
+  
+    // Function to send the email
+    function sendEmail(event) {
+      // Prevent the form from submitting via the default HTML form submission
+      event.preventDefault();
+  
+      // Get the form element
+      const form = document.getElementById("contact-form");
+  
+      // Use EmailJS to send the email
+      emailjs.sendForm("service_6zwawzg", "template_u7wec2f", form).then(
+        function (response) {
+          console.log("Email sent successfully:", response);
+          // Handle success here (e.g., display a success message)
+        },
+        function (error) {
+          console.log("Email send failed:", error);
+          // Handle errors here (e.g., display an error message)
+        }
+      );
+    }
+  
+    // Attach the sendEmail function to the form's submit event
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", sendEmail);
+  </script>
 </head>
-
 <body>
 
   <!-- ======= Header ======= -->
@@ -32,7 +61,7 @@
 
       <!-- <h1 class="logo"><a href="index.html">Yanelisa Khahlela</a></h1> -->
       
-      <a href="index.html" class="logo"><img src="assets/img/icon.png" alt="" class="img-fluid"></a>
+      <a href="index.html" class="logo"><img src="assets/images/icon.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -49,7 +78,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/pinkbow.jpg)">
+  <div id="hero" class="hero route bg-image" style="background-image: url(assets/images/pinkbow.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
@@ -76,7 +105,7 @@
                   <div class="row">
                     <div class="col-sm-6 col-md-5">
                       <div class="about-img">
-                        <img src="assets/img/cover-photo.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                        <img src="assets/images/cover-photo.jpg" class="img-fluid rounded b-shadow-a" alt="">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-7">
@@ -173,7 +202,6 @@
               <div class="service-content">
                 <h2 class="s-title">Web Design</h2>
                 <p class="s-description text-center">
-                  Explanation
                 </p>
               </div>
             </div>
@@ -186,7 +214,6 @@
               <div class="service-content">
                 <h2 class="s-title">Figma-UI/UX</h2>
                 <p class="s-description text-center">
-                  Explanation
                 </p>
               </div>
             </div>
@@ -199,7 +226,6 @@
               <div class="service-content">
                 <h2 class="s-title">Software Development</h2>
                 <p class="s-description text-center">
-                  Explanation
                 </p>
               </div>
             </div>
@@ -209,8 +235,13 @@
               <div class="service-ico">
                 <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
               </div>
+              <div class="service-content">
+                <h2 class="s-title">Mobile Developer </h2>
+              </div>
             </div>
           </div>
+
+
           <div class="col-md-4">
             <div class="service-box">
               <div class="service-ico">
@@ -219,7 +250,7 @@
               <div class="service-content">
                 <h2 class="s-title">Content Curator</h2>
                 <p class="s-description text-center">
-                  Explanation
+                  
               </div>
             </div>
           </div>
@@ -231,9 +262,8 @@
               <div class="service-content">
                 <h2 class="s-title">Data Analytics</h2>
                 <p class="s-description text-center">
-                  Explanation
+            
               </div>
-              
             </div>
           </div>
         </div>
@@ -263,9 +293,9 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/mzamomtsha.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/mzamomtsha.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/mzamomtsha.png" alt="" class="img-fluid">
+                  <img src="assets/images/mzamomtsha.png" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -278,8 +308,7 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -287,9 +316,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/work-2.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -302,8 +331,7 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -311,9 +339,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/work-3.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -326,7 +354,6 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
                     </div>
                   </div>
                 </div>
@@ -335,9 +362,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-4.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/work-4.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -350,7 +377,6 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
                     </div>
                   </div>
                 </div>
@@ -359,9 +385,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/work-4.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -374,7 +400,6 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
                     </div>
                   </div>
                 </div>
@@ -383,9 +408,9 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="assets/images/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
+                  <img src="assets/images/work-5.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -398,7 +423,6 @@
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
                     </div>
                   </div>
                 </div>
@@ -411,108 +435,141 @@
     </section><!-- End Portfolio Section -->
 
        <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Send message to me
-                      </h5>
-                    </div>
-                    <div>
-                      <form> 
-                        <div class="row">
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                          </div>
-                          
-                          <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Get in Touch
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        For any professional inquiries or to start a conversation,please
-                        dont hesistate to reach out using the contact form.Alternatively you can connect with me dirrectly
-                        through the provided email or phone number below,i value open communication and timely responses and i willing
-                        do my best to get back to you. 
-          
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> Cape Town, South Africa 7441</li>
-                        <li><span class="bi bi-phone"></span> (+27)60 396 7035 </li>
-                        <li><span class="bi bi-envelope"></span> khahlelaolunje@gmail.com.com</li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li> 
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
-                        <li><a href="https://www.linkedin.com/in/yanelisa-khahlela."><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
+       <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+       <script>
+         emailjs.init("tF4KbQbKCTLZpg-Ei");
+       </script>
+       <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+         <div class="overlay-mf"></div>
+         <div class="container">
+           <div class="row">
+             <div class="col-sm-12">
+               <div class="contact-mf">
+                 <div id="contact" class="box-shadow-full">
+                   <div class="row">
+                     <!-- Contact Form -->
+                     <div class="col-md-6">
+                       <div class="title-box-2">
+                         <h5 class="title-left">Send Message Us</h5>
+                       </div>
+                       <div>
+                         <form id="contact-form">
+                           <div class="row">
+                             <div class="col-md-12 mb-3">
+                               <div class="form-group">
+                                 <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                               </div>
+                             </div>
+                             <div class="col-md-12 mb-3">
+                               <div class="form-group">
+                                 <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                               </div>
+                             </div>
+                             <div class="col-md-12 mb-3">
+                               <div class="form-group">
+                                 <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required>
+                               </div>
+                             </div>
+                             <div class="col-md-12">
+                               <div class="form-group">
+                                 <textarea name="message" id="message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                               </div>
+                             </div>
+                             <div class="col-md-12 text-center"> <br> 
+                               <button type="submit" class="button button-a button-big button-rouded">Send Message</button> <br> <br>
+                               
+                             </div>
+                           </div>
+                         </form>
+                       </div>
+                     </div>
+                     <!-- Contact Information -->
+                     <div class="col-md-6">
+                       <div class="title-box-2 pt-4 pt-md-0">
+                         <h5 class="title-left">Get in Touch</h5>
+                       </div>
+                       <div class="more-info">
+                         <p class="lead">
+                           For any professional inquiries or to initiate a conversation, please do not hesitate to reach out 
+                           using the contact form below. Alternatively, you can connect with me directly through the provided email or phone number.
+                           I highly value open communication and strive to respond promptly.I will do my best to get back to you in a timely manner.
+                         </p>
+                         <ul class="list-ico">
+                           <li><span class="bi bi-geo-alt"></span> Cape Town,South Africa 7441</li>
+                           <li><span class="bi bi-phone"></span> (+27)60 396 7035</li>
+                           <li><span class="bi bi-envelope"></span> khahlelaolunje.com</li>
+                         </ul>
+                       </div>
+                       <div class="socials">
+                         <ul>
+                           <li><a href="#"><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
+                           <li><a href="#"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
+                           <li><a href="#"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
+                           <li><a href="#"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                         </ul>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>
+       <script>
+         document.addEventListener("DOMContentLoaded", function () {
+           const contactForm = document.getElementById("contact-form");
+       
+           contactForm.addEventListener("submit", function (event) {
+             event.preventDefault(); // Prevent default form submission
+       
+             // Prepare the email data using EmailJS
+             const emailData = {
+               to_email: "khahlelaolunje@gmail.com",
+               from_name: contactForm.name.value,
+               from_email: contactForm.email.value,
+               subject: contactForm.subject.value,
+               message: contactForm.message.value,
+             };
+       
+             // Send the email using EmailJS
+             emailjs
+               .send("service_6zwawzg", "template_u7wec2f", emailData)
+               .then(function (response) {
+                 // Handle the success response
+                 console.log("Email sent successfully:", response);
+                 alert("Your message has been sent. Thank you!");
+       
+                 // Clear the form data
+                 contactForm.reset();
+               })
+               .catch(function (error) {
+                 // Handle errors
+                 console.error("Email sending error:", error);
+                 alert("An error occurred. Please try again later.");
+               });
+           });
+         });
+       </script>
+    <!-- End Contact Section -->
 
-  </main><!-- End #main -->
+  </main> <!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          
-              
-            
-  <div id="preloader"></div>
+          <div class="copyright-box">
+    <p class="copywrite">&copy; Copyright <strong>Yanelisa Khahlela 2023</strong>.All Rights Reserved</p>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="assets/js/main.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 </body>
 </html>
-<script src="assets/js/main.js"></script>

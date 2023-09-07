@@ -176,23 +176,6 @@
     selector: '.portfolio-lightbox'
   });
 
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
 
   /**
    * Portfolio details slider
@@ -211,15 +194,32 @@
     }
   });
 
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
+  // Initialize EmailJS with your user ID
+  emailjs.init("tF4KbQbKCTLZpg-Ei");
+
+  // Function to send the email
+  function sendEmail() {
+    // Get the form element
+    const form = document.getElementById("contactme");
+
+    // Use EmailJS to send the email
+    emailjs.sendForm("service_6zwawzg", "template_u7wec2f", form).then(
+      function (response) {
+        console.log("Email sent successfully:", response);
+        // Handle success here (e.g., display a success message)
+      },
+      function (error) {
+        console.log("Email send failed:", error);
+        // Handle errors here (e.g., display an error message)
+      }
+    );
   }
+
+
+ // Your existing JavaScript code
+// const submitButton = document.getElementById("contactme-button");
+// submitButton.addEventListener("click", sendEmail);
+
 
   /**
    * Initiate Pure Counter 
