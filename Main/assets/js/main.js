@@ -34,10 +34,9 @@
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
-
-  /**
-   * Navbar links active state on scroll
-   */
+  
+  /******Navbar links active state on scroll******/
+  
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -170,31 +169,6 @@
   }
 
   /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
    * Portfolio details slider
    */
   new Swiper('.portfolio-details-slider', {
@@ -211,29 +185,8 @@
     }
   });
 
-  // Initialize EmailJS with your user ID
-  emailjs.init("tF4KbQbKCTLZpg-Ei");
-
-  // Function to send the email
-  function sendEmail() {
-    // Get the form element
-    const form = document.getElementById("contactme");
-
-    // Use EmailJS to send the email
-    emailjs.sendForm("service_6zwawzg", "template_u7wec2f", form).then(
-      function (response) {
-        console.log("Email sent successfully:", response);
-        // Handle success here (e.g., display a success message)
-      },
-      function (error) {
-        console.log("Email send failed:", error);
-        // Handle errors here (e.g., display an error message)
-      }
-    );
-  }
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
-
 })()
