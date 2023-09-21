@@ -131,14 +131,14 @@ a:hover {
   margin-top: 4rem;
 }
 
-/*--/ Title s /--*/
+/*-- Title s --*/
 .title-s {
   font-weight: 600;
   color: #1e1e1e;
   font-size: 1.1rem;
 }
 
-/*--/ Title A /--*/
+/*-- Title A --*/
 .title-box {
   margin-bottom: 4rem;
 }
@@ -478,8 +478,7 @@ float: right;
 
 /*-----------------Navigation Menu------------------------*/
 /**
-* Desktop Navigation 
-*/
+* Desktop Navigation */
 .navbar {
   padding: 0;
 }
@@ -839,6 +838,15 @@ float: right;
   .about-mf .box-pl2 {
     margin-top: 3rem;
     padding-left: 0rem;
+    flex-direction: column-reverse;
+  }
+
+  
+}
+
+@media (max-width: 480px){
+  .row {
+    flex-direction: column-reverse;
   }
 }
 
